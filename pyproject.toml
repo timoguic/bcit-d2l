@@ -1,0 +1,10 @@
+[project]
+name = "bcit_d2l"
+version = "0.1.0"
+dependencies = [
+    "click",
+]
+
+[project.scripts]
+d2l_unpack = "bcit_d2l.cli:unpack"
+d2l_grade = "bcit_d2l.cli:grade"
