@@ -12,6 +12,7 @@ This provides two scripts: `d2l_unpack` and `d2l_grade`.
 * Download the ZIP file containing all the submissions, and put it in a directory of your choice.
 * Let's say the ZIP file is in the folder `../midterm_1`.
 * Unpack all submissions with: `d2l_unpack ../midterm_1`.
+* This will create a folder for each submission. Each folder is named `<first name> <last name> <student ID>`.
 
 ### Templates folder
 
@@ -24,7 +25,7 @@ If a folder named `templates` exists in the same directory as the ZIP file, its 
 * Run: `d2l_grade ../midterm_1 pytest`.
 * After each run of the `pytest` command, choose between:
   * `a`: run the command again
-  * `d`: move the submission to the `done` folder
+  * `d`: move the submission to the `done` folder. Submissions in the `done` folder are automatically skipped.
   * `q`: quit
 
 Happy grading!
