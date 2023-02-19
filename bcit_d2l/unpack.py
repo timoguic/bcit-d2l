@@ -112,7 +112,7 @@ def copy_templates(dest: Path, from_folder=None):
     if from_folder is None:
         from_folder = dest / "templates"
         if not from_folder.exists():
-            from_folder = Path(".") / "templates"
+            return    
 
     for item in dest.iterdir():
         if not item.is_dir() or item.name.lower().startswith("template"):

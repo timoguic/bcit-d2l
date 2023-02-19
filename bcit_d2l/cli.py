@@ -32,13 +32,16 @@ def unpack(folder: str) -> None:
 def grade(folder: str, command: str) -> None:
    
     for node in Path(folder).iterdir():
-        print(node)
-        if node.name.startswith("template") or node.name.startswith("done") or not node.is_dir():
+        if not node.is_dir():
+            continue
+        if node.name.startswith("."):
+            continue
+        if node.name.startswith("template") or node.name.startswith("done"):    
             continue
 
         again = True
         while again:
-            proc = subprocess.run("pytest", cwd=node.resolve(), shell=True)
+            proc = subprocess.run(command, cwd=node.resolve(), shell=True)
             print()
             print("=" * 5, node.name, "=" *  5)
             print()
